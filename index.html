@@ -1,0 +1,119 @@
+<!doctype html><html><head><meta charset="utf-8"/><title>NODE TREE</title><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="stylesheet" href="./public/style.css"/><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"><script defer="defer" src="bundle.js"></script></head><body><div class="main"><div class="input-group"><div class="input-section"><input placeholder="당신의 비어있는 공간은 어디입니까?" id="prompt"> <button id="sendButton" class="btn btn-primary">SEND</button></div><textarea id="output"></textarea></div><div class="chat-container"><div class="chat-content" id="chatContent"></div></div><div class="dimmer"><div class="loader"><div class="progress"></div><p class="loader_text">Loading...</p></div></div></div><audio id="buttonSound" src="./sound/sound.mp3" style="display:none"></audio><style>.main{
+	display: flex;
+	position: fixed;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: space-between;
+	height: 100vh;
+}
+.chat-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+	text-align: left;
+    width: 100%;
+    height: 62%;
+    border: 1px solid #ddd;
+	overflow-x: auto; /* 가로 스크롤 활성화 */
+    overflow-y: auto; /* 세로 스크롤도 활성화 */
+    background-color: #f9f9f9;
+    padding: 10px;
+	opacity: 0.2;
+}
+
+.chat-content {
+	font-size: 10px;
+    line-height: 10px;
+    /* white-space: normal; 기본 줄바꿈 동작으로 설정 */
+    word-wrap: break-word; /* 긴 단어가 경계를 넘어가면 줄바꿈*/
+}
+.input-group{
+	display: flex;
+	position: fixed;
+	bottom: 100px;
+	width: 50%;
+	height: 200px;
+	left: 25%;
+	border:none;
+	background-color:rgba(255,255,255,0.5);
+	font-size:20px;
+	padding:12px 15px;
+	/* margin-bottom: 10px; */
+	border-radius:5px;
+	box-shadow:rgba(0,0,0,0.05) 0 54px 55px,
+	rgba(0,0,0,0.05) 0px -12px 30px,
+	rgba(0,0,0,0.05) 0px 4px 6px,
+	rgba(0,0,0,0.05) 0px 12px 3px,
+	rgba(0,0,0,0.09) 0px -3px 5px;
+	z-index: 1;
+}
+.input-section{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+}
+input{
+	height: 50px;
+	width: 100%;
+	font-size: 14px;
+}
+button{
+	height: 40px;
+	width: 100px;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+textarea{
+	width: 100%;
+	height: 40%;
+}
+.page_title{
+	color:#000;
+	position: fixed;
+	left: 60px;
+	top: 60px;
+	margin:0;
+	line-height:100%;
+	font-size: 42px;
+	pointer-events: none;
+	text-transform: uppercase;
+	opacity: 0.5;
+}
+.dimmer{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	display: flex;
+	justify-content:center;
+	align-items: center;
+}
+.dimmer.end{
+	opacity: 0;
+}
+.loader{
+	width:250px;
+	height:8px;
+	border: 2px solid #d9cce8;
+}
+.loader_text{
+	color:#d9cce8;
+	font-size: 18px;
+	text-align: center;
+	margin:0;
+	margin-top: 10px;
+}
+.progress{
+	width:10%;
+	height:100%;
+	background-color: #d9cce8;
+	transition:0.3s;
+}</style><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script><script>document.querySelector('.btn').addEventListener('click', function() {
+            document.getElementById('buttonSound').play();
+			});</script></body></html>
